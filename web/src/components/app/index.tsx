@@ -1,4 +1,5 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { createUploadLink } from 'apollo-upload-client';
 import * as React from 'react';
 import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
@@ -8,8 +9,8 @@ import { Content, Footer, HeaderBar, Layout, Sidebar } from '../layout';
 import HomePage from './HomePage';
 
 const client = new ApolloClient({
-  uri: process.env.API_URL,
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  link: createUploadLink({ uri: process.env.API_URL })
 });
 
 const ComingSoon = () => <h1>Coming Soon</h1>;

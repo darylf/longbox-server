@@ -12,6 +12,7 @@ export type Scalars = {
   Int: number;
   Float: number;
   DateTime: any;
+  Upload: any;
 };
 
 /** A comic book or trade paperback */
@@ -34,6 +35,7 @@ export type BookAttributes = {
   creditIds?: Maybe<Array<Scalars['ID']>>;
   issue?: Maybe<Scalars['String']>;
   seriesId?: Maybe<Scalars['ID']>;
+  coverImage?: Maybe<Scalars['Upload']>;
 };
 
 /** The connection type for Book. */
@@ -257,6 +259,7 @@ export type SeriesEdge = {
   /** The item at the end of the edge. */
   node?: Maybe<Series>;
 };
+
 
 /** A user-readable error */
 export type UserError = {
